@@ -17,8 +17,8 @@ jobs:
         run: |
            truncate -s 10G gentoo_root.img
            ls -alh
-           tar --use-compress-program="gzip -0" -cvf gentoo_root.tar.gz gentoo_root.img
-           split -b 1024mbb gentoo_root.tar.gz gentoo_root.tar.gz.part_
+           tar -cvf gentoo_root.tar gentoo_root.img
+           split -b 1024mbb gentoo_root.tar gentoo_root.tar.part_
            ls -alh
 
       - name: upload
@@ -26,7 +26,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          file: "*.tar.gz.part_*"
+          file: "*.tar.part_*"
           tags: true
 
 
