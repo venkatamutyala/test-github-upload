@@ -18,7 +18,7 @@ jobs:
            truncate -s 3G gentoo_root.img
            ls -alh
            tar -cvf gentoo_root.tar gentoo_root.img
-           split -b 1024mb gentoo_root.tar gentoo_root.tar.part_
+           split -b 1024M gentoo_root.tar gentoo_root.tar.part_
            ls -alh
 
       - name: upload
