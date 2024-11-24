@@ -15,10 +15,10 @@ jobs:
 
       - name: Generate cloud-init iso
         run: |
-           truncate -s 10G gentoo_root.img
+           truncate -s 3G gentoo_root.img
            ls -alh
            tar -cvf gentoo_root.tar gentoo_root.img
-           split -b 1024mbb gentoo_root.tar gentoo_root.tar.part_
+           split -b 1024mb gentoo_root.tar gentoo_root.tar.part_
            ls -alh
 
       - name: upload
