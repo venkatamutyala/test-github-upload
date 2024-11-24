@@ -12,6 +12,10 @@ jobs:
         run: |
            truncate -s 10G gentoo_root.img
            ls -alh
+           zip -s 2G -r gentoo_root.zip gentoo_root.img
+           ls -alh
+
+           
 
       
 
