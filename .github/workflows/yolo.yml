@@ -17,7 +17,7 @@ jobs:
         run: |
            truncate -s 10G gentoo_root.img
            ls -alh
-           zip -0 -s 100m -r zip_part_gentoo_root.zip gentoo_root.img
+           zip -0 -s 1024m -r zip_part_gentoo_root.zip gentoo_root.img
            ls -alh
 
       - name: upload
